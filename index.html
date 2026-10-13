@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ludo Royale | Premium Board Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <!-- HOME SCREEN -->
+        <section id="homeScreen" class="screen active">
+            <div class="home-content">
+                <div class="game-icon">🎲</div>
+
+                <p class="eyebrow">THE ULTIMATE BOARD GAME</p>
+                <h1>LUDO <span>ROYALE</span></h1>
+                <p class="subtitle">
+                    Roll the dice. Make your move. Rule the board!
+                </p>
+
+                <div class="home-buttons">
+                    <button id="playBtn" class="primary-btn">
+                        ▶ PLAY GAME
+                    </button>
+
+                    <button id="rulesBtn" class="secondary-btn">
+                        📖 HOW TO PLAY
+                    </button>
+                </div>
+
+                <p class="footer-text">
+                    Multiplayer • Computer AI • Classic Fun
+                </p>
+            </div>
+        </section>
+
+        <!-- GAME SETUP SCREEN -->
+        <section id="setupScreen" class="screen">
+            <div class="panel">
+                <button class="back-btn" id="setupBackBtn">
+                    ← Back
+                </button>
+
+                <h2>Game Setup</h2>
+                <p class="panel-subtitle">
+                    Choose how you want to play
+                </p>
+
+                <h3>Select Game Mode</h3>
+
+                <div class="mode-options">
+                    <button class="mode-card selected"
+                            data-mode="multiplayer">
+                        <span class="mode-icon">👥</span>
+                        <strong>Multiplayer</strong>
+                        <small>Play with friends</small>
+                    </button>
+
+                    <button class="mode-card"
+                            data-mode="computer">
+                        <span class="mode-icon">🤖</span>
+                        <strong>VS Computer</strong>
+                        <small>Challenge the AI</small>
+                    </button>
+                </div>
+
+                <div id="playerSelection">
+                    <h3>Number of Players</h3>
+
+                    <div class="player-options">
+                        <button class="player-count selected"
+                                data-players="2">2</button>
+                        <button class="player-count"
+                                data-players="3">3</button>
+                        <button class="player-count"
+                                data-players="4">4</button>
+                    </div>
+                </div>
+
+                <button id="startGameBtn" class="primary-btn">
+                    START GAME →
+                </button>
+            </div>
+        </section>
+
+        <!-- GAME SCREEN -->
+        <section id="gameScreen" class="screen">
+
+            <header class="game-header">
+                <div class="game-brand">
+                    🎲 LUDO <span>ROYALE</span>
+                </div>
+
+                <div class="header-actions">
+                    <button id="soundBtn" title="Sound">
+                        🔊
+                    </button>
+
+                    <button id="restartBtn" title="Restart">
+                        ↻
+                    </button>
+
+                    <button id="homeBtn" title="Home">
+                        ⌂
+                    </button>
+                </div>
+            </header>
+
+            <main class="game-layout">
+
+                <!-- PLAYER INFORMATION -->
+                <aside class="game-sidebar">
+
+                    <div class="status-card">
+                        <p class="status-label">CURRENT TURN</p>
+
+                        <div id="currentPlayerDisplay"
+                             class="current-player">
+                            🔴 Red Player
+                        </div>
+
+                        <p id="gameMessage">
+                            Roll the dice to begin!
+                        </p>
+                    </div>
+
+                    <div class="dice-card">
+                        <h3>ROLL THE DICE</h3>
+
+                        <div id="dice" class="dice">
+                            ⚀
+                        </div>
+
+                        <button id="rollDiceBtn"
+                                class="primary-btn">
+                            🎲 ROLL DICE
+                        </button>
+                    </div>
+
+                    <div class="players-card">
+                        <h3>PLAYERS</h3>
+                        <div id="playersList"></div>
+                    </div>
+
+                </aside>
+
+                <!-- LUDO BOARD -->
+                <div class="board-section">
+                    <div id="ludoBoard" class="ludo-board">
+                        <!-- Board generated using JavaScript -->
+                    </div>
+                </div>
+
+            </main>
+        </section>
+
+        <!-- RULES MODAL -->
+        <div id="rulesModal" class="modal hidden">
+            <div class="modal-content">
+                <button id="closeRulesBtn"
+                        class="modal-close">×</button>
+
+                <h2>📖 How to Play</h2>
+
+                <ul>
+                    <li>Roll a 6 to bring a token onto the board.</li>
+                    <li>Move your token according to the dice number.</li>
+                    <li>Landing on an opponent's token captures it unless the square is safe.</li>
+                    <li>Rolling a 6 gives you another turn.</li>
+                    <li>Move all four tokens to the finish to win.</li>
+                </ul>
+
+                <button id="gotItBtn" class="primary-btn">
+                    GOT IT!
+                </button>
+            </div>
+        </div>
+
+        <!-- WINNER MODAL -->
+        <div id="winnerModal" class="modal hidden">
+            <div class="modal-content winner-content">
+                <div class="trophy">🏆</div>
+                <h2>Congratulations!</h2>
+
+                <p id="winnerText">
+                    You are the winner!
+                </p>
+
+                <button id="playAgainBtn" class="primary-btn">
+                    PLAY AGAIN
+                </button>
+
+                <button id="winnerHomeBtn" class="secondary-btn">
+                    BACK TO HOME
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+   <script src="sounds.js"></script>
+<script src="ai.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
